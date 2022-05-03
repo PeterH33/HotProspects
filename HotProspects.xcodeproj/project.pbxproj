@@ -11,6 +11,9 @@
 		4CB16562281B68360047534B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB16561281B68360047534B /* ContentView.swift */; };
 		4CB16564281B68370047534B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CB16563281B68370047534B /* Assets.xcassets */; };
 		4CB16567281B68370047534B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CB16566281B68370047534B /* Preview Assets.xcassets */; };
+		4CF9ABF6282161E800387E06 /* ProspectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF9ABF5282161E800387E06 /* ProspectsView.swift */; };
+		4CF9ABF8282161EF00387E06 /* MeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF9ABF7282161EF00387E06 /* MeView.swift */; };
+		4CF9ABFA282168E100387E06 /* Prospect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF9ABF9282168E100387E06 /* Prospect.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		4CB16561281B68360047534B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4CB16563281B68370047534B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CB16566281B68370047534B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4CF9ABF5282161E800387E06 /* ProspectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProspectsView.swift; sourceTree = "<group>"; };
+		4CF9ABF7282161EF00387E06 /* MeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeView.swift; sourceTree = "<group>"; };
+		4CF9ABF9282168E100387E06 /* Prospect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prospect.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +57,11 @@
 		4CB1655E281B68360047534B /* HotProspects */ = {
 			isa = PBXGroup;
 			children = (
+				4CF9ABF9282168E100387E06 /* Prospect.swift */,
 				4CB1655F281B68360047534B /* HotProspectsApp.swift */,
 				4CB16561281B68360047534B /* ContentView.swift */,
+				4CF9ABF5282161E800387E06 /* ProspectsView.swift */,
+				4CF9ABF7282161EF00387E06 /* MeView.swift */,
 				4CB16563281B68370047534B /* Assets.xcassets */,
 				4CB16565281B68370047534B /* Preview Content */,
 			);
@@ -83,6 +92,8 @@
 			dependencies = (
 			);
 			name = HotProspects;
+			packageProductDependencies = (
+			);
 			productName = HotProspects;
 			productReference = 4CB1655C281B68360047534B /* HotProspects.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +122,8 @@
 				Base,
 			);
 			mainGroup = 4CB16553281B68360047534B;
+			packageReferences = (
+			);
 			productRefGroup = 4CB1655D281B68360047534B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,6 +150,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CF9ABF8282161EF00387E06 /* MeView.swift in Sources */,
+				4CF9ABFA282168E100387E06 /* Prospect.swift in Sources */,
+				4CF9ABF6282161E800387E06 /* ProspectsView.swift in Sources */,
 				4CB16562281B68360047534B /* ContentView.swift in Sources */,
 				4CB16560281B68360047534B /* HotProspectsApp.swift in Sources */,
 			);
@@ -195,7 +211,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -249,7 +265,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -275,6 +291,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,6 +321,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
