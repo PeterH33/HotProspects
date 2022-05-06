@@ -16,16 +16,16 @@ struct ProspectsView: View {
     @State private var isShowingScanner = false
     
     func handleScan(result: Result<ScanResult, ScanError>) {
-       isShowingScanner = false
+        isShowingScanner = false
         switch result {
         case .success(let result):
             let details = result.string.components(separatedBy: "\n")
             guard details.count == 2 else { return }
-
+            
             let person = Prospect()
             person.name = details[0]
             person.emailAddress = details[1]
-
+            
             prospects.add(person)
             
         case .failure(let error):
@@ -37,24 +37,24 @@ struct ProspectsView: View {
     
     func addNotification(for prospect: Prospect) {
         let center = UNUserNotificationCenter.current()
-
+        
         //very much like a func in a func
         let addRequest = {
             let content = UNMutableNotificationContent()
             content.title = "Contact \(prospect.name)"
             content.subtitle = prospect.emailAddress
             content.sound = UNNotificationSound.default
-
+            
             var dateComponents = DateComponents()
             dateComponents.hour = 9
-          //  let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+            //  let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
             //Using this 5 second trigger to testing purposes
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
             
             let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
             center.add(request)
         }
-
+        
         center.getNotificationSettings { settings in
             if settings.authorizationStatus == .authorized {
                 addRequest()
@@ -96,6 +96,23 @@ struct ProspectsView: View {
             return prospects.people.filter { word in !word.isContacted }
         }
     }
+    var sortedProspects: [Prospect] {
+        switch sortingOrder{
+        case .mostRecent:
+            //code
+            return filteredProspects
+        case .name:
+            //code
+            return filteredProspects.sorted()
+            
+        }
+    }
+    
+    @State private var isShowingSortOrderPicker = false
+    @State private var sortingOrder: SortOrder = .mostRecent
+    enum SortOrder {
+        case name, mostRecent
+    }
     
     
     
@@ -103,13 +120,20 @@ struct ProspectsView: View {
         
         NavigationView {
             List {
-                ForEach(filteredProspects) { prospect in
-                    VStack(alignment: .leading) {
-                        Text(prospect.name)
-                            .font(.headline)
-                        Text(prospect.emailAddress)
-                            .foregroundColor(.secondary)
-                    }
+                ForEach(sortedProspects) { prospect in
+                    HStack{
+                        VStack(alignment: .leading) {
+                            Text(prospect.name)
+                                .font(.headline)
+                            Text(prospect.emailAddress)
+                                .foregroundColor(.secondary)
+                        }
+                        if filter == .none{
+                         (prospect.isContacted) ? Image(systemName: "person.fill.checkmark") : Image(systemName: "person.fill.questionmark")
+                        }
+                        
+                        
+                    }//end HStack
                     .swipeActions {
                         if prospect.isContacted {
                             Button {
@@ -117,7 +141,7 @@ struct ProspectsView: View {
                             } label: {
                                 Label("Mark Uncontacted", systemImage: "person.crop.circle.badge.xmark")
                                 
-                             
+                                
                             }
                             .tint(.blue)
                         } else {
@@ -134,20 +158,36 @@ struct ProspectsView: View {
                             }
                             .tint(.orange)
                         }
-                    }
+                    }//end swipe actions
                 }
             }
-                .navigationTitle(title)
-                .toolbar {
+            .navigationTitle(title)
+            .toolbar {
+                ToolbarItemGroup(placement: .navigationBarTrailing){
+                    
                     Button {
                         isShowingScanner = true
                     } label: {
                         Label("Scan", systemImage: "qrcode.viewfinder")
                     }
+                    Button{
+                        isShowingSortOrderPicker = true
+                    } label: {
+                        Label("Change Sorting", systemImage: "arrow.up.arrow.down.square")
+                    }
                 }
-                .sheet(isPresented: $isShowingScanner) {
-                    CodeScannerView(codeTypes: [.qr], simulatedData: "Paul Hudson\npaul@hackingwithswift.com", completion: handleScan)
+            }
+            .sheet(isPresented: $isShowingScanner) {
+                CodeScannerView(codeTypes: [.qr], simulatedData: "Paul Hudson\npaul@hackingwithswift.com", completion: handleScan)
+            }
+            .confirmationDialog("Sort order?", isPresented: $isShowingSortOrderPicker){
+                Button("Date Added"){
+                    sortingOrder = .mostRecent
                 }
+                Button("Name"){
+                    sortingOrder = .name
+                }
+            }
         }
         
     }
@@ -156,7 +196,7 @@ struct ProspectsView: View {
 struct ProspectsView_Previews: PreviewProvider {
     static var previews: some View {
         ProspectsView(filter: .none).environmentObject(Prospects())
-           
+        
     }
 }
-    
+

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C5A2BE22822BDED002BD28D /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 4C5A2BE12822BDED002BD28D /* CodeScanner */; };
+		4C85AB07282561AB008F5624 /* CodeFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C85AB06282561AB008F5624 /* CodeFileManager.swift */; };
 		4CB16560281B68360047534B /* HotProspectsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB1655F281B68360047534B /* HotProspectsApp.swift */; };
 		4CB16562281B68360047534B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB16561281B68360047534B /* ContentView.swift */; };
 		4CB16564281B68370047534B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CB16563281B68370047534B /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C85AB06282561AB008F5624 /* CodeFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeFileManager.swift; sourceTree = "<group>"; };
 		4CB1655C281B68360047534B /* HotProspects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotProspects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CB1655F281B68360047534B /* HotProspectsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotProspectsApp.swift; sourceTree = "<group>"; };
 		4CB16561281B68360047534B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				4CF9ABF9282168E100387E06 /* Prospect.swift */,
+				4C85AB06282561AB008F5624 /* CodeFileManager.swift */,
 				4CB1655F281B68360047534B /* HotProspectsApp.swift */,
 				4CB16561281B68360047534B /* ContentView.swift */,
 				4CE7EA8D282418D8006FEA7F /* ImageSaver.swift */,
@@ -161,6 +164,7 @@
 				4CE7EA8E282418D8006FEA7F /* ImageSaver.swift in Sources */,
 				4CF9ABFA282168E100387E06 /* Prospect.swift in Sources */,
 				4CF9ABF6282161E800387E06 /* ProspectsView.swift in Sources */,
+				4C85AB07282561AB008F5624 /* CodeFileManager.swift in Sources */,
 				4CB16562281B68360047534B /* ContentView.swift in Sources */,
 				4CB16560281B68360047534B /* HotProspectsApp.swift in Sources */,
 			);

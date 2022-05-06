@@ -7,7 +7,15 @@
 
 import SwiftUI
 
-class Prospect: Identifiable, Codable{
+class Prospect: Identifiable, Codable, Comparable{
+    static func == (lhs: Prospect, rhs: Prospect) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    static func < (lhs: Prospect, rhs: Prospect) -> Bool {
+        lhs.name < rhs.name
+    }
+    
     
     
     var id = UUID()
@@ -30,20 +38,30 @@ class Prospect: Identifiable, Codable{
         save()
     }
     
+    
     let saveKey = "SavedData"
+    
     private func save() {
-        if let encoded = try? JSONEncoder().encode(people) {
-            UserDefaults.standard.set(encoded, forKey: saveKey)
-        }
+        FileManager.default.encode(people, toFile: saveKey)
+//        if let encoded = try? JSONEncoder().encode(people) {
+//
+//
+//            UserDefaults.standard.set(encoded, forKey: saveKey)
+//        }
     }
     
     init() {
-        if let data = UserDefaults.standard.data(forKey: saveKey) {
-            if let decoded = try? JSONDecoder().decode([Prospect].self, from: data) {
-                people = decoded
-                return
-            }
+        if let decoded: [Prospect] = FileManager.default.decode(saveKey){
+            people = decoded
+            return
         }
+        
+//        if let data = UserDefaults.standard.data(forKey: saveKey) {
+//            if let decoded = try? JSONDecoder().decode([Prospect].self, from: data) {
+//                people = decoded
+//                return
+//            }
+//        }
         
         people = []
     }
