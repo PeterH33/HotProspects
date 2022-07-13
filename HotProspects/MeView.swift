@@ -52,8 +52,9 @@ struct MeView: View {
                     .scaledToFit()
                     .contextMenu {
                         Button {
-                            let imageSaver = ImageSaver()
-                            imageSaver.writeToPhotoAlbum(image: qrCode)
+                            //Something has gone amiss with the original imagesaver file, there is some sort of a connection issue that needs to be hammered out.
+                           // let imageSaver = ImageSaver()
+                           // imageSaver.writeToPhotoAlbum(image: qrCode)
                         } label: {
                             Label("Save to Photos", systemImage: "square.and.arrow.down")
                         }

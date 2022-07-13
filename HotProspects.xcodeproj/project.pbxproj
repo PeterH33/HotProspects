@@ -13,7 +13,6 @@
 		4CB16562281B68360047534B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB16561281B68360047534B /* ContentView.swift */; };
 		4CB16564281B68370047534B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CB16563281B68370047534B /* Assets.xcassets */; };
 		4CB16567281B68370047534B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CB16566281B68370047534B /* Preview Assets.xcassets */; };
-		4CE7EA8E282418D8006FEA7F /* ImageSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE7EA8D282418D8006FEA7F /* ImageSaver.swift */; };
 		4CF9ABF6282161E800387E06 /* ProspectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF9ABF5282161E800387E06 /* ProspectsView.swift */; };
 		4CF9ABF8282161EF00387E06 /* MeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF9ABF7282161EF00387E06 /* MeView.swift */; };
 		4CF9ABFA282168E100387E06 /* Prospect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF9ABF9282168E100387E06 /* Prospect.swift */; };
@@ -26,7 +25,6 @@
 		4CB16561281B68360047534B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4CB16563281B68370047534B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CB16566281B68370047534B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		4CE7EA8D282418D8006FEA7F /* ImageSaver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageSaver.swift; path = ../../InstaFilter/InstaFilter/ImageSaver.swift; sourceTree = "<group>"; };
 		4CF9ABF5282161E800387E06 /* ProspectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProspectsView.swift; sourceTree = "<group>"; };
 		4CF9ABF7282161EF00387E06 /* MeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeView.swift; sourceTree = "<group>"; };
 		4CF9ABF9282168E100387E06 /* Prospect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prospect.swift; sourceTree = "<group>"; };
@@ -67,7 +65,6 @@
 				4C85AB06282561AB008F5624 /* CodeFileManager.swift */,
 				4CB1655F281B68360047534B /* HotProspectsApp.swift */,
 				4CB16561281B68360047534B /* ContentView.swift */,
-				4CE7EA8D282418D8006FEA7F /* ImageSaver.swift */,
 				4CF9ABF5282161E800387E06 /* ProspectsView.swift */,
 				4CF9ABF7282161EF00387E06 /* MeView.swift */,
 				4CB16563281B68370047534B /* Assets.xcassets */,
@@ -161,7 +158,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CF9ABF8282161EF00387E06 /* MeView.swift in Sources */,
-				4CE7EA8E282418D8006FEA7F /* ImageSaver.swift in Sources */,
 				4CF9ABFA282168E100387E06 /* Prospect.swift in Sources */,
 				4CF9ABF6282161E800387E06 /* ProspectsView.swift in Sources */,
 				4C85AB07282561AB008F5624 /* CodeFileManager.swift in Sources */,
